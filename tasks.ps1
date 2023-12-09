@@ -1,14 +1,3 @@
-function division{
-$number = read-host "Enter a number"
-for($digit = 2; $digit -le 9; $digit++){
- if ($number % $digit -eq 0) {
-       Write-Host "$number is divisible by $digit"
-    } 
-  }
-}
-
-
-
 $age = 23
 $element1 = 52 + $age
 $element2 = 49 - $age
@@ -35,3 +24,49 @@ $sum_friend3 = ($friend3.ToUpper()[-3..-1] | ForEach-Object { [int][char]$_ -
 [int][char]&#39;A&#39; + 1 }) | Measure-Object -Sum | Select-Object -ExpandProperty Sum
 $dataset = $sum_my_name, $sum_friend1, $sum_friend2, $sum_friend3
 ($dataset[0] -lt $dataset[2]) -or ! ($dataset[1] -gt $dataset[3])
+
+
+
+function division{
+$number = read-host "Enter a number"
+for($digit = 2; $digit -le 9; $digit++){
+ if ($number % $digit -eq 0) {
+       Write-Host "$number is divisible by $digit"
+    } 
+  }
+}
+
+
+
+function MasterFunction {
+   [int]$num = read-host ”ENTER NUMBER”
+
+    function CalculateSquare {
+        return $num * $num
+    }
+
+    function CheckEvenOdd {
+        if ($num % 2 -eq 0) {
+            return "Even"
+        } else {
+            return "Odd"
+        }
+    }
+
+
+    function CategorizeNumber () {
+        switch ($num) {
+            {$num -eq 0} { Write-Host "$num is zero." }
+            {$num  -gt 0} { Write-Host "$num is positive." }
+            {$num -lt 0} { Write-Host "$num is negative." }
+        }
+    }
+
+ CalculateSquare
+ CheckEvenOdd
+ CategorizeNumber
+}
+
+
+
+
