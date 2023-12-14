@@ -22,4 +22,75 @@ return $sum}
 
 
 
+function reverseNumber{
+$string = read-host "Enter"
+$massiv = @()
+$comp = $string.length
+[int]$string = $string
+for($i = 0; $i -lt $comp; $i++){
+$module = $string%10
+$massiv += $module
+$string /=10}
+$massiv = -join $massiv
+return $massiv}
+
+
+
+function reverseString{
+$string = read-host "Enter"
+$massiv = @()
+$comp = $string.length
+$new = $string -split ""
+for($i = $comp; $i -gt 0; $i--){
+$massiv += $new[$i]
+}
+$massiv = -join $massiv
+$massiv}
+
+
+
+function palindrome{
+$string = read-host "Enter"
+$massiv = @()
+$comp = $string.length
+$new = $string -split ""
+for($i = $comp; $i -gt 0; $i--){
+$massiv += $new[$i]}
+$massiv = -join $massiv
+if($string -eq $massiv) {
+echo "It is palindrome"} 
+else {echo "It is not palindrome"}
+}  
+
+
+
+function checkPrime{
+$number = read-host "Enter a number"
+[int]$prime = 0
+for($digit = 2; $digit -le 9; $digit++){
+if ($number % $digit -eq 0) {
+Write-Host "$number is divisible by $digit"
+$prime = 1}                                
+}           
+if ($prime -eq 0){
+write-host "It is prime number"}
+}  
+
+
+
+function factorial{
+[int]$number = read-host "Enter"
+$answer = 1
+for($i = 1; $i -le $number; $i++){
+$answer *=$i}
+$answer}
+
+
+
+function countWords{
+$sentence = read-host "Enter a sentence"
+$new = $sentence -split " "
+$new.count
+}
+
 
