@@ -94,3 +94,21 @@ $new.count
 }
 
 
+function anagram(){
+[string]$str1 = read-host "enter first string"
+[string]$str2 = read-host "enter second string"
+$newstr1 = $str1 -Split ""
+$newstr2 = $str2 -Split ""
+
+$last1 = $newstr1 | Sort-Object      
+$last2 = $newstr2 | Sort-Object      
+$last1 = -Join $last1
+$last2 = -Join $last2 
+
+if($last1 -eq $last2)
+{echo{"TRUE"}      
+}
+else{echo{"FALSE"}
+}
+}
+
