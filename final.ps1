@@ -77,6 +77,7 @@ $number = $number - 5 }
 while($number -ge 1){
 $birAZN++
 $number = $number - 1}
+
 "500 AZN"
 $besyuzAZN
 
@@ -88,6 +89,9 @@ $yuzAZN
 
 "50 AZN"
 $elliAZN
+
+"20 AZN"
+$iyirmiAZN
 
 "10 AZN"
 $onAZN
